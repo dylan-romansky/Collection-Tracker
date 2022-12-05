@@ -9,6 +9,8 @@ import { HttpClient, HttpParams, HttpHeaders } from '@angular/common/http';
 })
 export class UploaderComponent implements OnInit {
 
+  EQPURL: string = "http://localhost:8080/eqp";
+  IMGURL: string = "http://localhost:8080/img";
   filename = '';
   entryform: FormGroup = this.fb.group({
     name: ['', [Validators.required]],
@@ -19,6 +21,18 @@ export class UploaderComponent implements OnInit {
   constructor(private http: HttpClient, private fb: FormBuilder) { }
 
   ngOnInit(): void {
+  }
+
+  submitHandler()  {
+	console.log("click");
+    var formdata: any = new FormData();
+	formdata.append("name", this.entryform.get("name")!.value);
+	formdata.append("description", this.entryform.get("description")!.value);
+	formdata.append("imageId", this.entryform.get("imageId"));
+	this.http.post(this.EQPURL + 'create', formdata).subscribe(
+	  (response) => console.log(response),
+	  (error) => console.log(error)
+	)
   }
 
   onFileSelected(event:any)	{

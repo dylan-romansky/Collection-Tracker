@@ -1,8 +1,9 @@
 <h2>Create new entry</h2>
 
 <form [formGroup]="entryform">
-	<input formControlName="name">
-	<input formControlName="description">
+	<input formControlName="name" placeholder="name">
+	<input formControlName="description" placeholder="description">
+	<button>create</button>
 </form>
 
 <input type="file" class="file-input"
