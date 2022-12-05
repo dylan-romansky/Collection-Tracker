@@ -24,12 +24,11 @@ export class UploaderComponent implements OnInit {
   }
 
   submitHandler()  {
-	console.log("click");
     var formdata: any = new FormData();
 	formdata.append("name", this.entryform.get("name")!.value);
 	formdata.append("description", this.entryform.get("description")!.value);
 	formdata.append("imageId", this.entryform.get("imageId"));
-	this.http.post(this.EQPURL + 'create', formdata).subscribe(
+	this.http.post(this.EQPURL + '/create', formdata).subscribe(
 	  (response) => console.log(response),
 	  (error) => console.log(error)
 	)

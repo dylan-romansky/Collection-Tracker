@@ -21,6 +21,7 @@ public class Equipment {
     @Getter @Setter
     private String imageId;
 
+    public Equipment()  {}
     public Equipment(String name, String description)   {
         this.name = name;
         this.description = description;

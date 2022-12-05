@@ -1,6 +1,6 @@
 <h2>Create new entry</h2>
 
-<form [formGroup]="entryform">
+<form [formGroup]="entryform" (ngSubmit)="submitHandler()">
 	<input formControlName="name" placeholder="name">
 	<input formControlName="description" placeholder="description">
 	<button>create</button>

@@ -23,6 +23,7 @@ public class Image {
     @Getter @Setter
     private byte[] data;
 
+    public Image() {}
     public Image(String name, String type, byte[] data) {
         this.name = name;
         this.type = type;
