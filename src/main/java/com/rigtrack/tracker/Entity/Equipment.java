@@ -22,6 +22,9 @@ public class Equipment {
     private String imageId;
 
     public Equipment()  {}
+    public Equipment(String name)   {
+        this.name = name;
+    }
     public Equipment(String name, String description)   {
         this.name = name;
         this.description = description;
